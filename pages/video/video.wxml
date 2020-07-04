@@ -1,0 +1,16 @@
+<view class="container">
+	<view class="subject-title">
+		请选择课程
+	</view>
+	<view class="subject-list">
+    <block wx:for="{{workList}}" wx:key="key" wx:for-item="work">
+		  <view class="subject-item" data-index="{{index}}" bindtap="goIndex">
+        <text>{{work.name}}</text>
+        <text class='subject-time'>需要学习时间：{{work.lenth}}秒</text>
+        <view class='subject-time' wx:if="{{work.iswork == true}}">
+          已学习时间：{{work.show_time}}秒
+        </view>
+      </view>
+    </block>
+	</view>
+</view>

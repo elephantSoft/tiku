@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="page-title">
+		<view class="title-text">错题总数</view>
+		<view class="num-value num-value-color">{{all_count}}</view>
+	</view>
+	<view class="fav-list">
+		<block wx:for="{{workList}}" wx:key="key" wx:for-item="tag" wx:for-index="tagindex">
+			<view class="fav-item" id="{{tagindex}}" bindtap="goPaper">
+				<view class="pitem-info">
+					<view class="pitem-title">{{tag.workName}}</view>
+					<view class="pitem-attach">
+						<text class="hard-value">错题数量：{{tag.notMastered}}题</text>
+						<text class="hot-value">{{tag.pass}}人做过</text>
+					</view>
+				</view>
+				<view class="go-pitem">
+					<image src="../../images/todo.png" mode="widthFix"></image>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

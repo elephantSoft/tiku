@@ -1,0 +1,89 @@
+.page-title {
+  padding: 20rpx 0 20rpx 0;
+  width: 100%;
+  height: 56rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: #eee solid 3rpx;
+}
+
+.title-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-text {
+  color: #999;
+}
+
+.course-item{
+  background:#fff;
+  width:100%;
+  box-sizing: border-box;
+  padding:30rpx;
+  border-bottom:#eee solid 3rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.course-title{
+  margin-bottom:20rpx;
+}
+
+.course-time{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.course-time text{
+  color:#999;
+}
+
+.pitem-icon{
+  margin: 0 20rpx 0 10rpx;
+}
+
+.pitem-icon image{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.pitem-info{
+  width: 100%;
+}
+
+.go-pitem{
+  margin-right:20rpx;
+}
+
+.go-pitem image{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content-info {
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-info-title {
+  font-weight: bold;
+  font-size: 36rpx;
+  padding-bottom: 20rpx;
+}
+
+.content-info-text {
+  padding-bottom: 10rpx;
+  text-align: left;
+}

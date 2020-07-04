@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="subject-title">
+        请选择科目
+  </view>
+  <view class="subject-list">
+    <view class="subject-item" bindtap="goIndexOne"><text>初级会计实务</text></view>
+    <view class="subject-item" bindtap="goIndexTwo"><text>初级经济法基础</text></view>
+    <!-- <view class="subject-item" bindtap="goIndex(2)"><text>中级会计实务</text></view>
+    <view class="subject-item" bindtap="goIndex(3)"><text>中级经济法基础</text></view> -->
+  </view>
+</view>

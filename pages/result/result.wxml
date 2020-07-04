@@ -1,0 +1,34 @@
+<!--result.wxml-->
+<view class="container">
+  <view class="grade-cont">
+    <view class="result-chart result-chart-color">
+      <view class="result-tit">
+        正确率
+      </view>
+      <view class="result-value">
+        {{rate}}%
+      </view>
+    </view>
+  </view>
+  <block wx:if="bAdShow === true">
+    <view class="adContainer">
+      <ad unit-id="adunit-1ed569428216c24e" bindload="adLoad" binderror="adError" ad-intervals="30"></ad>
+    </view>
+  </block>
+  <view class="result-card-title">
+    <text>答题情况</text>
+  </view>
+  <view class="result-card-cont">
+    <view class="result-items">
+      <block wx:for="{{answer}}" wx:key="key" wx:for-item="item">
+        <view class="result-item {{item ? '' : 'result-item-wrong'}}" data-current="{{index}}">
+          {{index + 1}}
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="result-card-ctl">
+    <view class="result-btn result-btn-color" bindtap="goOpenVideo">学习课程</view>
+    <view class="result-btn result-btn-color" bindtap="goAnalysis">查看解析</view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/mycoin/mycoin.wxml-->
+<view class="container">
+  <view class="page-title">
+    <view class="title-info">
+      <view class="title-text">我的积分</view>
+      <view class="title-text image">
+        <image src="../../images/info.png" mode="widthFix" bindtap="toInfo"></image>
+      </view>
+    </view>
+    <view style="color:#cfcfcf;font-size:22rpx;padding-bottom:10rpx">成功分享好友（好友打开后）获积分，积分换课程</view>
+    <view class="num-value num-value-color">
+      {{all_count}}
+      <span class="num-user-value">（已使用:{{use_count}}）</span>
+    </view>
+  </view>
+
+  <view class="fav-list">
+    <block wx:for="{{mycoinList}}" wx:key="key" wx:for-item="coin" wx:for-index="coinindex">
+      <view class="fav-item" id="{{coinindex}}">
+        <view class="pitem-info">
+          <view class="pitem-title">{{coin.name}}</view>
+          <view class="pitem-attach">
+            <text class="hard-value">新增：{{coin.count}}积分</text>
+            <text class="hot-value">获取时间：{{coin.time}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <view class="my-list" style="padding: 20rpx 0 20rpx 0;">
+    <view class="service-item" style="margin-right:0;border-radius: 10px 0 0 10px;" bindtap="handleShare">
+      分享海报
+    </view>
+    <view class="service-item" style="margin-left:0;background-color:#70da96;border-radius: 0 10px 10px 0;" bindtap="handleCourse">
+      积分换课
+    </view>
+  </view>
+
+  <canvas canvas-id="myCanvas" style="width:600px;height:800px;" class="canvas" binderror="canvasIdErrorCallback"></canvas>
+
+  <!-- 预览分享图 这里就是上图展示的效果   -->
+  <!-- 刚开始是隐藏的 生成分享图之后显示, 用一个布尔变量来控制 这里的样式大家看图就写出来了 -->
+  <view hidden='{{hidden}}' class='preview' bindtap='cancel'>
+    <view>
+      <image src='{{prurl}}' style="width:600rpx;height:800rpx"></image>
+    </view>
+    <view>
+      <button type='primary' size='mini' bindtap='save'>保存分享</button>
+    </view>
+  </view>
+  <mp-dialog title="积分介绍" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view class="content-info">
+      <view class="content-info-title">1.积分可以通过推荐其他用户正常使用小程序获取。</view>
+      <view class="content-info-title">2.直接分享或发圈推荐后，当被推荐用户正常打开小程序，您可获取"+1"积分。</view>
+      <view class="content-info-title">3.获取的积分可用来换取收费课程或者参加模考，获取报告等VIP服务。</view>
+      <view class="content-info-title">4.您可以直接转发小程序给好友或同学群来推荐，也可使用海报来进行分享。</view>
+    </view>
+  </mp-dialog>
+</view>

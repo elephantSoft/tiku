@@ -1,0 +1,90 @@
+<!-- my.wxml -->
+<view class="container">
+  <view class="my-info" wx:if="{{login === false}}">
+    <view class="userinfo">
+      <image src="../../images/df-avatar.png" class="userinfo-avatar" background-size="cover"></image>
+      <view class="userinfo-status">
+        <view wx:if="{{type === 0}}">
+          <button style="background-color:#d8eee0;" open-type="getPhoneNumber" bindgetphonenumber="bindPhoneNumber">
+            授权手机号码登录
+          </button>
+          <text class="my-nologin-text">记录学习，每天进步多一点</text>
+        </view>
+        <view wx:elif="{{type === 1}}">
+          <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+            授权获取头像昵称
+          </button>
+          <text class="my-nologin-text">手机号码获取成功，您可以选择获取头像昵称</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="my-info" wx:elif="login === true">
+    <view class="userinfo">
+      <image src="{{userInfo.avatarUrl}}" class="userinfo-avatar" background-size="cover"></image>
+      <view class="userinfo-status">
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </view>
+      <icon type="clear" size="20" color="green" bindtap="onClear" />
+    </view>
+    <!-- <view class="user-set">
+			<image src="../../images/arrow-right.png" mode="widthFix"></image>
+		</view> -->
+  </view>
+  <block wx:if="bAdShow === true">
+    <view style="width:100%;margin:0 auto;">
+      <view class="adContainer">
+        <ad unit-id="adunit-959de934d6b6f666" bindload="adLoad" binderror="adError" ad-intervals="30"></ad>
+      </view>
+    </view>
+  </block>
+  <view class="my-list">
+    <view class="set-item" bindtap="toOpenCourse">
+      <view class="item-title">
+        <image src="../../images/open.png" mode="widthFix"></image>
+        <text>名师公开课</text>
+      </view>
+      <image src="../../images/arrow-right.png" class="item-arrow" mode="widthFix"></image>
+    </view>
+    <view class="set-item" bindtap="toTrade">
+      <view class="item-title">
+        <image src="../../images/paper-list.png" mode="widthFix"></image>
+        <text>考试选择</text>
+      </view>
+      <image src="../../images/arrow-right.png" class="item-arrow" mode="widthFix"></image>
+    </view>
+    <view class="set-item" bindtap="toBuylist">
+      <view class="item-title">
+        <image src="../../images/buy-list.png" mode="widthFix"></image>
+        <text>我的课程</text>
+      </view>
+      <image src="../../images/arrow-right.png" class="item-arrow" mode="widthFix"></image>
+    </view>
+    <view class="set-item" bindtap="toMyCoin">
+      <view class="item-title">
+        <image src="../../images/mycoin.png" mode="widthFix"></image>
+        <text>我的积分</text>
+      </view>
+      <image src="../../images/arrow-right.png" class="item-arrow" mode="widthFix"></image>
+    </view>
+    <view class="set-item">
+      <view class="item-title">
+        <image src="../../images/about.png" mode="widthFix"></image>
+        <text>关于我们</text>
+      </view>
+      <image src="../../images/arrow-right.png" class="item-arrow" mode="widthFix"></image>
+    </view>
+  </view>
+  <view class="my-list" style="padding: 40rpx 0 0 0;">
+    <block wx:if="{{login === false}}">
+      <button class="service-item" open-type="contact" bindcontact="handleContact">
+        联系客服
+      </button>
+    </block>
+    <block wx:else>
+      <button class="service-item" open-type="contact" bindcontact="handleContact" session-from='{"nickName":"{{userInfo.nickName}}","avatarUrl":"{{userInfo.avatarUrl}}"}'>
+        联系客服
+      </button>
+    </block>
+  </view>
+</view>

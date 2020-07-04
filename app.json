@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/splash/splash",
+    "pages/index/index",
+    "pages/analysis/analysis",
+    "pages/buylist/buylist",
+    "pages/fav/fav",
+    "pages/goods/goods",
+    "pages/mistake/mistake",
+    "pages/my/my",
+    "pages/paper/paper",
+    "pages/plist/plist",
+    "pages/result/result",
+    "pages/store/store",
+    "pages/subject/subject",
+    "pages/trade/trade",
+    "pages/video/video",
+    "pages/event-link/event-link",
+    "pages/favanalysis/favanalysis",
+    "pages/mycoin/mycoin",
+    "pages/mockexam/mockexam",
+    "pages/mockpaper/mockpaper",
+    "pages/mockreport/mockreport",
+    "pages/integral/integral"
+  ],
+  "window": {
+    "navigationStyle": "default",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#70DA96",
+    "navigationBarTitleText": "职称通关",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#666",
+    "selectedColor": "#888",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/study.png",
+        "selectedIconPath": "images/study-at.png",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "iconPath": "images/store.png",
+        "selectedIconPath": "images/store-at.png",
+        "text": "vip"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my-at.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

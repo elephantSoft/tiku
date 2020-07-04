@@ -1,0 +1,94 @@
+.buylist-tab{
+  width:100%;
+  box-sizing: border-box;
+  padding:0;
+  height:40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs-item{
+  box-sizing: border-box;
+  width:50%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  border-right:3rpx solid #eee;
+  color:#999;
+}
+
+.tabs-item-at{
+  width:50%;
+}
+
+.course-item{
+  background:#fff;
+  width:100%;
+  box-sizing: border-box;
+  padding:30rpx;
+  border-bottom:#eee solid 3rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.course-title{
+  margin-bottom:20rpx;
+}
+
+.course-time{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.course-time text{
+  color:#999;
+}
+
+.pitem-icon{
+  margin: 0 20rpx 0 10rpx;
+}
+
+.pitem-icon image{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.pitem-info{
+  width: 100%;
+}
+
+.go-pitem{
+  margin-right:20rpx;
+}
+
+.go-pitem image{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content-info {
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-info-title {
+  font-weight: bold;
+  font-size: 48rpx;
+  padding-bottom: 20rpx;
+}
+
+.content-info-text {
+  padding-bottom: 10rpx;
+  text-align: left;
+}

@@ -1,0 +1,6 @@
+<view class="page-body">
+  <!-- <view class="back-but" bindtap='clickLeft'>
+    <image class="back-but-img" src="../../images/arrow_right.png" />
+  </view> -->
+  <web-view class="web-view" src="{{Url}}"></web-view>
+</view>

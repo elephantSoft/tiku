@@ -1,0 +1,36 @@
+<view class="container">
+  <view class="page-title">
+    <view class="title-info">
+      <view class="title-text">积分兑换课程</view>
+    </view>
+  </view>
+  <view style="width:100%;">
+    <block wx:for="{{classList}}" wx:for-item="class" wx:key="key" wx:for-index="classindex">
+      <view class="course-item">
+        <view class="pitem-icon">
+          <image src="../../images/info.png" mode="widthFix" data-index="{{classindex}}" bindtap="toInfo"></image>
+        </view>
+        <view class="pitem-info" data-index="{{classindex}}" bindtap="toGoods">
+          <view class="course-title">
+            <text>{{class.title}}</text>
+          </view>
+          <view class="course-time">
+            <text>兑换所需积分: {{class.price}}</text>
+          </view>
+        </view>
+        <view class="go-pitem" data-index="{{classindex}}" bindtap="toChange">
+          <image src="../../images/arrow-right.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <mp-dialog title="课程介绍" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view class="content-info">
+      <view class="content-info-title">{{ classList[choiceIndex].title }}</view>
+      <block wx:for="{{classList[choiceIndex].goods_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+        <image src="{{item}}" mode="widthFix" style="width:100%"></image>
+      </block>
+    </view>
+  </mp-dialog>
+</view>

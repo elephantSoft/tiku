@@ -1,0 +1,16 @@
+<view class="container">
+
+  <view class="logo-box">
+    <image src="../../vi/logo.png" mode="widthFix"></image>
+    <text>专注于会计师职称考试</text>
+  </view>
+
+  <view class="login-box" style="padding-top:560rpx">
+    <text class="login-state">未注册的用户将自动注册</text>
+  </view>
+
+  <view class="login-box" style="padding-top:10rpx">
+    <text class="login-state">数据加载中，请稍后</text>
+  </view>
+
+</view>

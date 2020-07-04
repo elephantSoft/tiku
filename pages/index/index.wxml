@@ -1,0 +1,126 @@
+<!--index.wxml-->
+<view class="container">
+  <image class="bgimg" src="../../images/home-bg.png" mode="widthFix"></image>
+  <view class="index-wrap">
+    <view class="enter-top">
+      <!-- view class="check-grade-out">
+        查看成绩预测
+      </view -->
+      <view class="check-grade-in">
+        <view class="check-grade-tit">预测分</view>
+        <view class="check-grade-cont">
+          <text class="check-grade-num">{{fraction}}</text>
+          <text class="check-grade-total">/100</text>
+        </view>
+      </view>
+      <view class="select-category select-category-color" bindtap="toSubject">
+        <text>{{ test_info }}</text>
+        <image src="../../images/arrow01.png" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="enter-zone">
+      <view class="enter-bg">
+        <view class="enter-item" bindtap="toMockPaper">
+          <view class="enter-ico" style="background:#ffe7d4;">
+            <image src="../../images/kd.png" mode="widthFix"></image>
+          </view>
+          <text class="enter-text">全真模考</text>
+        </view>
+        <view class="enter-item" bindtap="toMistake">
+          <view class="enter-ico" style="background:#fee6e4;">
+            <image src="../../images/ct.png" mode="widthFix"></image>
+          </view>
+          <text class="enter-text">错题练习</text>
+        </view>
+        <view class="enter-item" bindtap="toFav">
+          <view class="enter-ico" style="background:#f7e1ed;">
+            <image src="../../images/sc.png" mode="widthFix"></image>
+          </view>
+          <text class="enter-text">我的收藏</text>
+        </view>
+        <view class="enter-item" bindtap="toHistory">
+          <view class="enter-ico" style="background:#deeaf9;">
+            <image src="../../images/lx.png" mode="widthFix"></image>
+          </view>
+          <text class="enter-text">练习历史</text>
+        </view>
+      </view>
+    </view>
+    <view class="study-chart">
+      <view class="study-percent chart-style study-percent-color">
+        <text class="study-data">{{rate}}%</text>
+        <text class="study-text">学习进度</text>
+      </view>
+      <view class="study-now-time chart-style">
+        <text class="study-data">{{mine}}题</text>
+        <text class="study-text">已做过</text>
+      </view>
+      <view class="study-total-time chart-style">
+        <text class="study-data">{{count}}题</text>
+        <text class="study-text">总题数</text>
+      </view>
+    </view>
+    <view class="know-tree">
+      <block wx:for="{{knowList}}" wx:key="key" wx:for-item="knowNode">
+        <view class="node-wrap">
+          <view class="node-tit first-node">
+            <view class="node-left">
+              <view class="node-point" id="{{knowNode.id}}" bindtap="ashowChild">
+                <view class="point-up"></view>
+                <image src="../../images/{{knowNode.open ? 'first-minus.png' : 'first-add.png'}}" mode="widthFix"></image>
+                <view class="point-down {{knowNode.open ? '' : 'point-no-line' }}"></view>
+              </view>
+              <view class="node-cont" id="{{knowNode.id}}" bindtap="ashowChild">
+                <text class="node-text">{{knowNode.parentName}}</text>
+                <text class="do-num">{{knowNode.num}}</text>
+              </view>
+            </view>
+            <view class="node-handle" data-id='{{knowNode.tagId}}' bindtap="toPaper">
+              <image src="../../images/todo.png" mode="widthFix"></image>
+            </view>
+          </view>
+          <view class="node-hiden {{knowNode.open ? 'node-show' : ''}}">
+            <block wx:for="{{scdList}}" wx:key="key" wx:for-item="scdNode">
+              <view class="node-tit scd-node">
+                <view class="node-left">
+                  <view class="node-point" id="{{scdNode.id}}" bindtap="bshowChild">
+                    <view class="point-up"></view>
+                    <image src="../../images/{{scdNode.open ? 'scd-minus.png' : 'scd-add.png'}}" mode="widthFix"></image>
+                    <view class="point-down {{(index == scdList.length-1) && !scdNode.open ? 'point-no-line' : ''}}"></view>
+                  </view>
+                  <view class="node-cont" id="{{scdNode.id}}" bindtap="bshowChild">
+                    <text class="node-text">{{scdNode.scdName}}</text>
+                    <text class="do-num">{{scdNode.num}}</text>
+                  </view>
+                </view>
+                <view class="node-handle" data-id='{{scdNode.tagId}}' bindtap="toPaper">
+                  <image src="../../images/todo.png" mode="widthFix"></image>
+                </view>
+              </view>
+              <view class="node-hiden {{scdNode.open ? 'node-show' : ''}}">
+                <block wx:for="{{thrList}}" wx:key="key" wx:for-item="thrNode">
+                  <view class="node-tit thr-node">
+                    <view class="node-left">
+                      <view class="node-point">
+                        <view class="point-up"></view>
+                        <view class="point-dot"></view>
+                        <view class="point-down {{(index == thrList.length-1) && !scdNode.noLast ? 'point-no-line' : ''}}"></view>
+                      </view>
+                      <view class="node-cont">
+                        <text class="node-text">{{thrNode.thrName}}</text>
+                        <text class="do-num">有知识点课程</text>
+                      </view>
+                    </view>
+                    <view class="node-handle" data-id='{{thrNode.tagId}}' bindtap="toVideo">
+                      <image src="../../images/video.png" mode="widthFix"></image>
+                    </view>
+                  </view>
+                </block>
+              </view>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

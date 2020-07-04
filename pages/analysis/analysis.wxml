@@ -1,0 +1,134 @@
+<wxs module="m1">
+	var choType = function(chotype) {
+		switch (chotype) {
+			case 1:
+				return "radio";
+				break;
+			case 9:
+				return "radio";
+				break;
+			default:
+				return "poly";
+		}
+	}
+	module.exports.choType = choType;
+</wxs>
+<swiper current="{{currentTab}}" style="height:{{swiperHeight}}px;" bindchange="changeTab">
+	<block wx:for="{{questions}}" wx:for-item="question" wx:key="key" wx:for-index="questionindex">
+		<swiper-item>
+			<view class="topic-info">
+				<view class="topic-type">
+					<block wx:if="{{question.qType === 1}}">
+						单项选择
+					</block>
+					<block wx:elif="{{question.qType === 8}}">
+						多项选择
+					</block>
+					<block wx:elif="{{question.qType === 9}}">
+						判断题
+					</block>
+          <block wx:elif="{{question.qType === 10}}">
+            不定项选择
+          </block>
+				</view>
+				<view class="topic-num"><text class="test-at test-at-color">{{questionindex + 1}}</text>/{{questions.length}}</view>
+			</view>
+			<view class="topic-box" style="height:{{swiperHeight - 46}}px;">
+				<block wx:if="{{question.isContent === true}}">
+					<view class="topic-cont">
+						<text>【本题材料】</text>
+            <rich-text nodes="{{question.mContent}}"></rich-text>
+					</view>
+				</block>
+				<view class="topic-cont">
+					<rich-text nodes="{{question.qContent}}"></rich-text>
+				</view>
+				<view class="answer-area {{m1.choType(question.qType)}}">
+					<block wx:for="{{question.choices_info}}" wx:key="key" wx:for-item="choItem" wx:for-index="itemindex">
+						<view class="item-choice" id="{{itemindex}}" data-chotype="{{question.qType}}" data-parentindex="{{questionindex}}" hover-class="item-choice-hover">
+							<block wx:if="{{choItem.thistrue}}">
+								<view class="choice-box choice-box-true">{{choItem.option}}</view>
+							</block>
+							<block wx:elif="{{choItem.selected || choItem.thistrue}}">
+								<view class="choice-box  choice-box-wrong">{{choItem.option}}</view>
+							</block>
+							<block wx:else>
+								<view class="choice-box">{{choItem.option}}</view>
+							</block>
+							<view class="item-cont">
+								<rich-text nodes="{{choItem.text}}"></rich-text>
+							</view>
+						</view>
+					</block>
+				</view>
+
+				<view class="analysis-box">
+					<view class="analysis-tag">答案</view>
+					<view class="analysis-cont">
+						正确答案：
+						<text class="true-answer" decode="true">{{question.answer}}&nbsp;&nbsp;</text>
+						你的答案：
+						<text class="your-answer">{{question.you_answer}}</text>
+					</view>
+					<view class="analysis-tag">本题解析</view>
+					<view class="analysis-cont">{{question.resolve['本题解析']}}</view>
+					<view class="analysis-tag">反馈</view>
+					<view class="analysis-cont">
+						<view class="analysis-feedback"><text>答案与解析反馈</text>
+							<image src="../../images/arrow-right.png" mode="widthFix"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</swiper-item>
+	</block>
+
+	<swiper-item>
+		<view class="topic-complete">
+			<view class="complete-tip">
+				<image src="../../images/compelet-pic.jpg" mode="widthFix"></image>
+				<text>是否继续学习</text>
+			</view>
+			<view class="topic-complete-ctl">
+				<view class="complete-btn" bindtap="goIndex">返回首页</view>
+				<view class="complete-btn" bindtap="goPaper">继续学习</view>
+			</view>
+		</view>
+	</swiper-item>
+</swiper>
+
+<view class="paper-bar">
+	<view class="paper-fav" bindtap="addFav">
+		<image src="../../images/{{favStatus ? 'paper-sc-at.png' :'paper-sc.png' }}" mode="widthFix"></image>
+	</view>
+	<view class="paper-card" bindtap="toOpenCard">
+		<image src="../../images/paper-card.png" mode="widthFix"></image>
+	</view>
+	<view class="paper-card" bindtap="toOpenVideo">
+		<image src="../../images/video.png" mode="widthFix"></image>
+	</view>
+	<view class="paper-share">
+		<image src="../../images/paper-share.png" mode="widthFix"></image>
+	</view>
+</view>
+
+<!-- 侧滑面板 -->
+<view animation="{{animationData}}" class="topic-card" style="left:100%">
+	<view class="answer-card-title">
+		<text>答题卡</text>
+	</view>
+	<view class="answer-card-cont">
+		<view style="height:{{swiperHeight - 70}}px;">
+			<view class="answer-items">
+				<block wx:for="{{questions}}" wx:key="key" wx:for-item="question">
+					<view class="result-item {{question.isRight == 1 ? '' : 'result-item-wrong'}}" data-current="{{index}}" bindtap="swichNav">
+						{{index + 1}}
+					</view>
+				</block>
+			</view>
+		</view>
+	</view>
+	<view class="answer-card-ctl">
+		<view class="answer-btn answer-btn-color" bindtap="tocloseCard">返回</view>
+	</view>
+</view>

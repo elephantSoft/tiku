@@ -1,0 +1,103 @@
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1;
+}
+
+.canvas-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5%;
+  margin: 0 5% 5% 5%;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 80%;
+}
+
+.canvas-info-content {
+  display: flex;
+  font-size: 28rpx;
+  color: #dfdfdf;
+  align-items: unset;
+  justify-content: space-around;
+}
+
+.canvas-info-back {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5%;
+  margin: 5% 0 0 0;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.canvas-info-back-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas-info-title {
+  padding: 20rpx 0 20rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.canvas-info-analyes {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  padding: 20rpx 40rpx 20rpx 40rpx;
+}
+
+.canvas-info-tag {
+  margin: 10rpx;
+  padding: 10rpx;
+  background-color: #fe1e1e;
+  color: #efefef;
+  border-radius: 5px;
+}
+
+.result-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.result-text-text {
+  font-size: 28rpx;
+}
+
+.result-text-image {
+  padding: 0 10rpx 0 10rpx;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.content-info {
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0rpx;
+}
+
+.content-info-title {
+  text-align: left;
+  padding-bottom: 10rpx;
+}
+
+#mychart-dom-multi-bar {
+  width: 100%;
+  height: 100%;
+}
+
+#mychart-dom-multi-scatter {
+  width: 60%;
+  height: 60%;
+}

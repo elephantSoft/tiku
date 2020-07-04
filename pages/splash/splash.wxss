@@ -1,0 +1,17 @@
+.logo-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120rpx;
+}
+
+.logo-box image {
+  width: 260rpx;
+  height: 260rpx;
+}
+
+.logo-box text {
+  color: #666;
+  margin-top: 20rpx;
+}

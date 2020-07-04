@@ -1,0 +1,276 @@
+/**index.wxss**/
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.bgimg {
+  width: 100%;
+}
+
+.index-wrap {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+.enter-top {
+  width: 100%;
+  padding-top: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.check-grade-in {
+  margin-left: 90rpx;
+  font-size: 38rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.check-grade-tit {
+  font-size: 30rpx;
+}
+
+.check-grade-num {
+  font-size: 70rpx;
+}
+
+.check-grade-out {
+  margin-left: 90rpx;
+  font-size: 38rpx;
+  height: 130rpx;
+  display: flex;
+  align-items: center;
+}
+
+.select-category {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-left: 36rpx;
+  height: 66rpx;
+  line-height: 66rpx;
+  border-top-left-radius: 33rpx;
+  border-bottom-left-radius: 33rpx;
+}
+
+.select-category text {
+  margin-right: 20rpx;
+}
+
+.select-category image {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 20rpx;
+}
+
+.enter-zone {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+
+.enter-bg {
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20rpx;
+  box-shadow: 0 1rpx 10rpx 3rpx rgba(0, 0, 0, 0.08);
+}
+
+.enter-item {
+  width: 160rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30rpx 0 0 0;
+  color: #888;
+}
+
+.enter-ico {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 45rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-ico image {
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.enter-text {
+  margin: 20rpx 0;
+}
+
+.study-chart {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 60rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.chart-style {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+.study-percent {
+  border-radius: 80rpx;
+  border-style: solid;
+  border-width: 5rpx;
+}
+
+.study-data {
+  font-size: 34rpx;
+  color: #333;
+}
+
+.study-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+/* 知识点树 */
+
+.know-tree {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10rpx 30rpx;
+}
+
+.node-wrap {
+  border-bottom: #eee solid 3rpx;
+}
+
+.node-tit {
+  display: flex;
+  justify-content: space-between;
+}
+
+.node-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.node-point {
+  display: flex;
+  flex-direction: column;
+}
+
+.first-node .node-point image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.scd-node .node-point image {
+  width: 30rpx;
+  height: 30rpx;
+  margin: 0 5rpx;
+}
+
+.point-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  /* background: #5987eb; */
+  background: #029132;
+  margin: 0 9rpx 0 11rpx;
+}
+
+.point-up, .point-down {
+  width: 20rpx;
+  /* border-right: 1rpx #5987eb solid; */
+  border-right: 1rpx #029132 solid;
+}
+
+.first-node .point-up {
+  height: 26rpx;
+}
+
+.first-node .point-down {
+  height: 76rpx;
+}
+
+.scd-node .point-up {
+  height: 31rpx;
+}
+
+.scd-node .point-down {
+  height: 81rpx;
+}
+
+.thr-node .point-up {
+  height: 36rpx;
+}
+
+.thr-node .point-down {
+  height: 86rpx;
+}
+
+/* 排除*/
+
+.first-node .point-up {
+  border: 0;
+}
+
+.point-no-line {
+  border: 0;
+}
+
+.node-cont {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.node-text {
+  height: 52rpx;
+  line-height: 52rpx;
+  font-size: 34rpx;
+  color: #333;
+}
+
+.do-num {
+  color: #888;
+  font-size: 28rpx;
+  width: 560rpx;
+}
+
+.node-handle {
+  height: 136rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20rpx;
+}
+
+.node-handle image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.node-hiden {
+  display: none;
+}
+
+.node-show {
+  display: block;
+}

@@ -1,0 +1,13 @@
+.back-but {
+  width: 100%;
+}
+.back-but-img {
+  width: 8%;
+  height: 50rpx;
+  margin: 90rpx 2% 20rpx 2%;
+}
+.web-view {
+  width: 100%;
+  height: auto;
+  margin-top: 10rpx;
+}

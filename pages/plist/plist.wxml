@@ -1,0 +1,43 @@
+<view class="container">
+	<view class="paper-tab">
+		<block wx:for="{{tabs}}" wx:key="key" wx:for-item="tab">
+			<view class="tabs-item {{tab.active? 'tabs-item-at tabs-item-at-color':''}}" bindtap="onTabs" data-index="{{index}}"><text>{{tab.name}}</text></view>
+		</block>
+	</view>
+	<block wx:if="{{tabIndex === 0}}">
+		<view class="paper-list">
+			<block wx:for="{{workList}}" wx:key="key" wx:for-item="work" wx:for-index="workindex">
+				<view class="paper-item" id="{{workindex}}" bindtap="goPaper">
+					<view class="pitem-info">
+						<view class="pitem-title">{{work.paperName}}</view>
+						<view class="pitem-attach">
+							<text class="hard-value">开始时间：{{work.startTime}}</text>
+							<text class="hot-value">{{work.pass}}人做过</text>
+						</view>
+					</view>
+					<view class="go-pitem">
+						<image src="../../images/todo.png" mode="widthFix"></image>
+					</view>
+				</view>
+			</block>
+		</view>
+	</block>
+  <block wx:elif="{{tabIndex === 1}}">
+		<view class="paper-list">
+			<block wx:for="{{finishList}}" wx:key="key" wx:for-item="finish" wx:for-index="finishindex">
+				<view class="paper-item" id="{{finishindex}}" bindtap="goFinishPaper">
+					<view class="pitem-info">
+						<view class="pitem-title">{{finish.paperName}}</view>
+						<view class="pitem-attach">
+							<text class="hard-value">开始时间：{{finish.startTime}}</text>
+							<text class="hot-value">交卷时间：{{finish.submitTime}}</text>
+						</view>
+					</view>
+					<view class="go-pitem">
+						<image src="../../images/todo.png" mode="widthFix"></image>
+					</view>
+				</view>
+			</block>
+		</view>
+	</block>
+</view>

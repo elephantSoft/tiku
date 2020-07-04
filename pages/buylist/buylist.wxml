@@ -1,0 +1,54 @@
+<view class="buylist-tab">
+	<block wx:for="{{tabs}}" wx:key="key" wx:for-item="tab">
+		<view class="tabs-item {{tab.active? 'tabs-item-at tabs-item-at-color':''}}" bindtap="onTabs" data-index="{{index}}"><text>{{tab.name}}</text></view>
+	</block>
+</view>
+<swiper style="height:{{swiperHeight+170}}px;" current="{{currentTab}}" bindchange="swiperchange">
+	<swiper-item>
+		<view class="swiper-cont" style="height:{{swiperHeight - 170}}px;">
+			<block wx:for="{{classList}}" wx:for-item="class" wx:key="key" wx:for-index="classindex">
+				<view class="course-item">
+          <view class="pitem-icon">
+            <image src="../../images/info.png" mode="widthFix" data-index="{{classindex}}" bindtap="toInfo"></image>
+          </view>
+					<view class="pitem-info" data-index="{{classindex}}" bindtap="toGoods">
+						<view class="course-title">
+							<text>{{class.className}}</text>
+						</view>
+						<view class="course-time">
+							<text>班级编号: {{class.cid}}</text>
+						</view>
+					</view>
+					<view class="go-pitem" data-index="{{classindex}}" bindtap="toGoods">
+						<image src="../../images/arrow-right.png" mode="widthFix"></image>
+					</view>
+				</view>
+			</block>
+		</view>
+	</swiper-item>
+	<swiper-item>
+		<view class="swiper-cont" style="height:auto;">
+			<block wx:for="{{videoList}}" wx:for-item="video" wx:key="key" wx:for-index="videoindex">
+				<view class="course-item" data-index="{{videoindex}}" bindtap="toVideo">
+					<view class="pitem-info">
+						<view class="course-title">
+							<text>{{video.title}}</text>
+						</view>
+						<view class="course-time">
+							<text decode="true">学习时长: {{video.length}}秒&nbsp;&nbsp;最后打开: {{video.update}}</text>
+						</view>
+					</view>
+					<view class="go-pitem">
+						<image src="../../images/video.png" mode="widthFix"></image>
+					</view>
+				</view>
+			</block>
+		</view>
+	</swiper-item>
+  <mp-dialog title="课程介绍" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view class="content-info">
+      <view class="content-info-title">{{ classList[choiceIndex].className }}</view>
+      <rich-text nodes="{{ classList[choiceIndex].remark }}"></rich-text>
+    </view>
+  </mp-dialog>
+</swiper>

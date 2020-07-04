@@ -1,0 +1,169 @@
+/**index.wxss**/
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.bgimg {
+  width: 100%;
+}
+
+.page-title {
+  padding-top: 20rpx;
+  width: 100%;
+  height: 160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: #eee solid 3rpx;
+}
+
+.title-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title-text {
+  color: #999;
+}
+
+.title-text image {
+  padding: 0 10rpx 0 10rpx;
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.num-value {
+  font-size: 40rpx;
+}
+
+.num-value-color {
+  /* color:#5987eb; */
+  color: #029132;
+}
+
+.num-user-value {
+  font-size: 28rpx;
+  color: #70da96;
+}
+
+.index-wrap {
+  width: 100%;
+}
+
+.fav-list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx 120rpx 30rpx;
+}
+
+.fav-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3rpx solid #d9d9d9;
+  height: 150rpx;
+}
+
+.pitem-title {
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.pitem-attach {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.hot-value {
+  margin-left: 20rpx;
+}
+
+.go-pitem {
+  margin-right: 30rpx;
+}
+
+.go-pitem image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 0 10% 0 10%;
+  width: 80%;
+  background-color: #d8eee0;
+}
+
+.canvas {
+  position: fixed;
+  width: 600px;
+  height: 800px;
+  left: 0;
+  top: 9999px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.preview {
+  position: fixed;
+  width: 100vh;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.preview image {
+  max-width: 600rpx;
+  max-height: 800rpx;
+  margin: 10%;
+  margin-bottom: 5%;
+}
+
+.preview button {
+  height: 80rpx;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  font-size: 36rpx;
+  border-radius: 50px;
+  color: #e9e9d9;
+  background-color: #70da96;
+  width: 40%;
+}
+
+.content-info {
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0rpx;
+}
+
+.content-info-title {
+  text-align: left;
+  padding-bottom: 10rpx;
+}
+
+.my-list {
+  width: 100%;
+  border-top: 2px solid #f2f2f2;
+  box-sizing: border-box;
+  height: 66px;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+}

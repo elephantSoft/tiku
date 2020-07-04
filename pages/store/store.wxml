@@ -1,0 +1,39 @@
+<scroll-view class="goods-list" scroll-y style="height:{{scrollHeight}}px">
+	<block wx:for="{{goodses}}" wx:for-item="goods" wx:key="key" wx:for-index="goodsindex">
+		<view class="goods-item" data-index="{{goodsindex}}" bindtap="goGoods">
+			<view class="goods-info">
+				<view class="goods-tit">{{goods.title}}</view>
+				<view class="goods-attach">
+					<image src="../../images/time.png" mode="widthFix"></image>
+					<text>{{goods.begin_time}} - {{goods.end_time}}</text>
+				</view>
+			</view>
+			<view class="goods-about">
+				<view class="teachers">
+					<view class="teacher-item">
+						<image src="{{goods.goods_info[0].avater_url}}" mode="widthFix"></image>
+						<text>{{goods.goods_info[0].name}}</text>
+					</view>
+					<view class="teacher-item">
+						<image src="{{goods.goods_info[1].avater_url}}" mode="widthFix"></image>
+						<text>{{goods.goods_info[1].name}}</text>
+					</view>
+					<view class="teacher-item">
+						<image src="{{goods.goods_info[2].avater_url}}" mode="widthFix"></image>
+						<text>{{goods.goods_info[2].name}}</text>
+					</view>
+				</view>
+				<view class="sail-info">
+          <block wx:if="{{type == 0}}">
+					  <view class="price">￥<text>{{goods.price}}</text></view>
+					  <view class="seat">仅售{{goods.stock}}席，已有<text>{{goods.reward_stock}}</text>人购买</view>
+          </block>
+          <block wx:if="{{type == 1}}">
+            <view class="price">*<text>联系客服</text></view>
+            <view class="seat">仅有{{goods.stock}}席，已有<text>{{goods.reward_stock}}</text>学员</view>
+          </block>
+				</view>
+			</view>
+		</view>
+	</block>
+</scroll-view>

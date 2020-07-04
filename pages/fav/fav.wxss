@@ -1,0 +1,74 @@
+/**index.wxss**/
+.container {
+  position: relative;
+  width:100%;
+}
+
+.bgimg{
+  width:100%;
+}
+
+.page-title{
+  width:100%;
+  height:160rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom:#eee solid 3rpx;
+}
+
+.title-text{
+  color:#999;
+}
+
+.num-value{
+  font-size: 40rpx;
+}
+
+.num-value-color{
+  /* color:#5987eb; */
+  color: #029132;
+}
+
+.index-wrap{
+  width:100%;
+}
+
+.fav-list{
+  width:100%;
+  box-sizing: border-box;
+  padding: 0 30rpx 0 30rpx;
+}
+
+.fav-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom:3rpx solid #d9d9d9;
+  height:150rpx;  
+}
+
+.pitem-title{
+  font-size: 30rpx;
+  margin-bottom:10rpx;
+}
+
+.pitem-attach{
+  font-size: 26rpx;
+  color:#999;
+}
+
+.hot-value{
+  margin-left:20rpx;
+}
+
+.go-pitem{
+  margin-right:30rpx;
+}
+
+.go-pitem image{
+  display: block;
+  width:40rpx;
+  height:40rpx;
+}

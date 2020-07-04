@@ -1,0 +1,12 @@
+<view class="custom_nav" style="height:{{navbarHeight}}px;background-color:#70DA96;">
+  <view class="custom_nav_box" style="height:{{navbarHeight}}px;">
+    <view class="custom_nav_bar" style="top:{{statusBarHeight}}px; height:{{cusnavH}}px;">
+      <view class="icon-back" bindtap='back'>
+        <image src='../../images/back.png' mode='aspectFill' class='back-pre'></image>
+      </view>
+      <view class="nav_title" style="height:{{cusnavH}}px; line-height:{{cusnavH}}px;">
+        {{title}}
+      </view>
+    </view>
+  </view>
+</view>

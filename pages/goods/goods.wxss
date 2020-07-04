@@ -1,0 +1,205 @@
+.goods-intro{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 30rpx;
+  height:80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid #eee;
+}
+
+.goods-info{
+  width:600rpx;
+}
+
+.goods-title{
+  font-size: 30rpx;
+  margin-bottom:10rpx;
+}
+
+.goods-attach{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+}
+
+.goods-attach image{
+  display: block;
+  width:28rpx;
+  height:28rpx;
+}
+
+.goods-attach text{
+  margin-left:10rpx;
+  color:#999;
+}
+
+.goods-share image{
+  width:50rpx;
+  height:50rpx;
+}
+
+.goods-tabs{
+  width:100%;
+  box-sizing: border-box;
+  padding:0 80rpx;
+  height:40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.tabs-item{
+  box-sizing: border-box;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+}
+
+image {
+  vertical-align: middle;
+}
+
+.buy-box{
+  width:100%;
+  border-top:2px solid #f2f2f2;
+  box-sizing: border-box;
+  height:50px;
+  position: fixed;
+  bottom: 0;
+  background:#fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buy-info{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.buy-price{
+  font-size: 26rpx;
+  color: #ff6c00;
+  margin-left: 30rpx;
+}
+
+.buy-service{
+  display: flex;
+  text-align:center;
+  align-items:center;
+  justify-content: center;
+  margin: auto;
+  color: #ff6c00;
+}
+
+.buy-price text{
+  font-size: 60rpx;
+}
+
+.buy-text{
+  font-size: 26rpx;
+  margin-left:30rpx;
+  color:#999;
+}
+
+.buy-time text,.buy-seat text{
+  color:#ff6c00;
+}
+
+.buy-now{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#ff6c00;
+  width:220rpx;
+  font-size: 36rpx;
+  color:#fff;
+}
+
+.swiper-cont{
+  overflow: auto;
+  background:#f2f2f2;
+}
+
+.course-outline{
+  width:100%;
+  box-sizing: border-box;
+  padding:20rpx;
+}
+
+.outline-item{
+  background:#fff;
+  width:100%;
+  box-sizing: border-box;
+  padding:30rpx;
+  border-bottom:#eee solid 3rpx;
+  font-size: 30rpx;
+}
+
+.course-title{
+  margin-bottom:20rpx;
+}
+
+.course-time{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 26rpx;
+
+}
+
+.course-time image{
+  display: block;
+  width:28rpx;
+  height:28rpx;
+}
+
+.course-time text{
+  margin-left:10rpx;
+  color:#999;
+}
+
+.teachers-box{
+  box-sizing: border-box;
+  padding:30rpx;
+  background:#fff;
+}
+
+.teacher-item{
+  display: flex;
+  justify-content: space-between;
+}
+
+.teacher-pic{
+  width:70rpx;
+}
+
+.teacher-pic image{
+  width:70rpx;
+  height:70rpx;
+  display: block;
+  border-radius: 35rpx;
+}
+
+.teacher-detail{
+  width:590rpx;
+}
+
+.teacher-name{
+  height:70rpx;
+  line-height:70rpx;
+  font-size: 30rpx;
+  color:#333;
+}
+
+.teacher-intr{
+  font-size: 30rpx;
+  color:#666;
+  margin:10rpx 0 50rpx 0;
+}

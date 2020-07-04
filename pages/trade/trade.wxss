@@ -1,0 +1,25 @@
+.subject-title{
+  width:100%;
+  font-size: 40rpx;
+  text-align: center;
+  padding:60rpx 0;
+}
+
+.subject-list{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subject-item{
+  width:80%;
+  margin-bottom:30rpx;
+  height:90rpx;
+  background:#d8eee0;
+  /* background:#eee; */
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,99 @@
+<view class="container">
+  <view class="paper-tab">
+    <block wx:for="{{tabs}}" wx:key="key" wx:for-item="tab">
+      <view class="tabs-item {{tab.active? 'tabs-item-at tabs-item-at-color':''}}" bindtap="onTabs" data-index="{{index}}">
+        <text>{{tab.name}}</text>
+      </view>
+    </block>
+  </view>
+  <block wx:if="{{tabIndex === 0}}">
+    <view class="paper-list">
+      <block wx:for="{{workList}}" wx:key="key" wx:for-item="work" wx:for-index="workindex">
+        <view class="paper-item" id="{{workindex}}" bindtap="goPaper">
+          <view class="pitem-info">
+            <view class="pitem-title">{{work.title}}</view>
+            <view class="pitem-attach">
+              <text class="hard-value">开始：{{work.startTime}}</text>
+              <text class="hard-value">结束：{{work.endTime}}</text>
+            </view>
+            <view class="pitem-attach">
+              <text class="hot-value">考试时长：{{work.time_length}}</text>
+              <text class="hot-value">{{work.count}}人报名参加</text>
+            </view>
+          </view>
+          <view class="go-pitem">
+            <block wx:if="{{work.enroll === 1}}">
+              <image src="../../images/todo.png" mode="widthFix"></image>
+            </block>
+            <block wx:else>
+              <image src="../../images/bm.png" mode="widthFix"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:elif="{{tabIndex === 1}}">
+    <view class="paper-list">
+      <block wx:for="{{finishList}}" wx:key="key" wx:for-item="finish" wx:for-index="finishindex">
+        <view class="paper-item" style="height:220rpx;" id="{{finishindex}}" bindtap="goFinishPaper">
+          <view class="pitem-info">
+            <view class="pitem-title">{{finish.title}}</view>
+            <view class="pitem-attach-list">
+              <text>开始时间：{{finish.startTime}}</text>
+              <text>结束时间：{{finish.endTime}}</text>
+              <text>{{finish.count}}人报名参加</text>
+            </view>
+          </view>
+          <view class="go-pitem">
+            <image src="../../images/todo.png" mode="widthFix"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:elif="{{tabIndex === 2}}">
+    <view class="paper-list">
+      <block wx:for="{{reportList}}" wx:key="key" wx:for-item="report" wx:for-index="reportindex">
+        <view class="paper-item" style="height:220rpx;" id="{{reportindex}}" bindtap="goReportPaper">
+          <view class="pitem-info">
+            <view class="pitem-title">{{report.title}}</view>
+            <view class="pitem-attach-list">
+              <text>开始时间：{{report.startTime}}</text>
+              <text>交卷时间：{{report.deliverTime}}</text>
+              <text>报告时间：{{report.reportTime}}</text>
+            </view>
+          </view>
+          <view class="go-pitem">
+            <block wx:if="{{report.status === 1}}">
+              <image src="../../images/report.png" mode="widthFix"></image>
+            </block>
+            <block wx:else>
+              <image src="../../images/report-no.png" mode="widthFix"></image>
+            </block>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  <!-- 弹出式对话框 -->
+  <mp-dialog title="模考须知" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view class="content-info">
+      <view>欢迎参加会计师资格考试全真模考，请仔细阅读以下说明</view>
+      <view class="content-info-memo">
+        <view class="content-info-text">
+          1、本模考由前会计师资格考试命题组专家设计，考试的难度，覆盖的知识点以考试大纲为准，采用平行组卷方式命题，能非常准确的评估参加模考的学生能力水平。
+        </view>
+        <view class="content-info-text">
+          2、本模考与正式考试参加方式完全相同，报名成功后的同学请在模考开始前5分钟打开模考系统，到达模考设定时候后可进入系统参加考试，开考30分钟后不能参加。
+        </view>
+        <view class="content-info-text">
+          3、本模考的考试时长及题量与正式考试相同，请参加考试的同学抓紧时间完成考试，考试时间到达后，系统会自动收卷提交考试试卷到后台进行批改。
+        </view>
+        <view class="content-info-text">
+          4、本模考的结束后的120分钟后，系统批改完成，请同学至看报告功能查看模考成绩。系统会根据同学们的答题成绩，答题速度及答题能力生成详细的评估报告，请根据需要下载。
+        </view>
+      </view>
+    </view>
+  </mp-dialog>
+</view>

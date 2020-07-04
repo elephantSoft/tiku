@@ -1,0 +1,105 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="canvas-info" style="margin-top:5%;">
+    <view class="canvas-info-title">
+      {{ title }}
+    </view>
+    <view class='canvas-info-content'>
+      <view>
+        参加人数：{{ exam_count }}
+      </view>
+      <view>
+        交卷：{{ delivery_time }}
+      </view>
+    </view>
+    <view class="canvas-info-back">
+      <view class="canvas-info-back-info">
+        <span style="font-size:80rpx;color:#00df00;">{{ my_result }}</span>
+        <view class="result-text">
+          <view class="result-text-text">
+            您的得分
+          </view>
+          <view class="result-text-image">
+            <image src="../../images/info.png" style="width:40rpx;" mode="widthFix" bindtap="toInfo"></image>
+          </view>
+        </view>
+      </view>
+      <view class="canvas-info-back-info">
+        <view style="font-size:40rpx;">
+          <span style="font-size:80rpx;color:#00df00;">{{ my_time }}</span>
+        </view>
+        <view style="font-size:28rpx;">
+          总用时
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="canvas-info">
+    <view class="canvas-info-title">
+      大数据分析
+    </view>
+    <view style="font-size:28rpx;text-align:center">
+      你目前的能力
+      <span style="font-size:80rpx;color:#00df00;">
+        <block wx:if="{{ bPass }}">
+          能
+        </block>
+        <block wx:else>
+          不能
+        </block>
+      </span>通过
+    </view>
+    <view style="text-align:center;">
+      {{ subject }}的{{ course }}考试
+    </view>
+    <view style="display:flex;font-size:28rpx;color:#dfdfdf;justify-content:space-around;">
+      <view>
+        您的排名:{{ my_rank }}
+      </view>
+      <view>
+        通关分数线排名:{{ pass_rank }}
+      </view>
+    </view>
+  </view>
+  <view class="canvas-info">
+    <view class="canvas-info-title">
+      正确率比较
+    </view>
+    <view style="font-size:28rpx;color:#dfdfdf;text-align:center;">
+      仅统计通关考生的数据
+    </view>
+    <view style="width:600rpx;height:320rpx;">
+      <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ecBar}}"></ec-canvas>
+    </view>
+  </view>
+  <view class="canvas-info">
+    <view class="canvas-info-title">
+      答题速度比较
+    </view>
+    <view style="font-size:28rpx;color:#dfdfdf;text-align:center;">
+      仅统计通关考生的数据
+    </view>
+    <view style="width:600rpx;height:320rpx;">
+      <ec-canvas id="mychart-dom-multi-scatter" canvas-id="mychart-multi-scatter" ec="{{ ecScatter }}"></ec-canvas>
+    </view>
+  </view>
+  <view class="canvas-info">
+    <view class="canvas-info-title">
+      能力分析（有缺陷的知识点）
+    </view>
+    <view class="canvas-info-analyes">
+      <block wx:for="{{ tags }}" wx:for-item="tag" wx:key="key" wx:for-index="tagindex">
+        <view class="canvas-info-tag">
+          {{ tag.value }}
+        </view>
+      </block>
+    </view>
+  </view>
+  <mp-dialog title="评分介绍" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view class="content-info">
+      <view class="content-info-title">1.计分方法与实际考试完全一致。</view>
+      <view class="content-info-title">2.判断题选错会倒扣 0.5 分。</view>
+      <view class="content-info-title">3.不定项选择答错 0 分，仅部分正确按单项给分。</view>
+    </view>
+  </mp-dialog>
+</view>

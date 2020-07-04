@@ -1,0 +1,125 @@
+/* pages/my/my.wxss */
+
+.container {
+  padding: 0;
+  background: #f2f2f2;
+  position: static;
+}
+
+.my-info {
+  box-sizing: border-box;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 8rpx solid #eee;
+}
+
+.userinfo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.userinfo-status {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+}
+
+.my-login-btn {
+  border-style: solid;
+  border-width: 3rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  width: 200rpx;
+}
+
+.my-nologin-text {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  color: #999;
+}
+
+.userinfo-nickname {
+  color: #666;
+  padding-right: 10rpx;
+  font-size: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-set {
+  color: #666;
+}
+
+.user-set image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.my-list {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0 0 30rpx;
+  background: #fff;
+}
+
+.set-item {
+  border-bottom: 3rpx solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 110rpx;
+}
+
+.item-title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item-title image {
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.item-title text {
+  margin-left: 30rpx;
+}
+
+.item-arrow {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 40rpx;
+}
+
+.service-item {
+  margin: 0 10% 0 10%;
+  width: 80%;
+  background-color: #d8eee0;
+}
+
+.adContainer {
+  width: 100%;
+  padding: 0 0 0 0;
+  border-bottom: 8rpx solid #eee;
+}

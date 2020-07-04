@@ -1,0 +1,156 @@
+<view class="goods-intro">
+  <view class="goods-info">
+    <view class="goods-title">{{goods.title}}</view>
+    <view class="goods-attach">
+      <image src="../../images/time.png" mode="widthFix"></image>
+      <text>{{goods.begin_time}} - {{goods.end_time}}</text>
+    </view>
+  </view>
+  <view class="goods-share">
+    <button open-type='share'>
+      <image src="../../images/goods-share.png" mode="widthFix"></image>
+    </button>
+  </view>
+</view>
+<view class="goods-tabs">
+  <block wx:for="{{tabs}}" wx:key="key" wx:for-item="tab">
+    <view class="tabs-item {{tab.active? 'tabs-item-at tabs-item-at-color':''}}" bindtap="onTabs" data-index="{{index}}">
+      <text>{{tab.name}}</text>
+    </view>
+  </block>
+</view>
+<block wx:if="{{goods.goods_type == 0}}">
+  <swiper style="height:{{swiperHeight-170}}px;" current="{{currentTab}}" bindchange="swiperchange">
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <block wx:for="{{goods.info1_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+          <image src="{{item}}" mode="widthFix" style="width:100%"></image>
+        </block>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <view class="course-outline">
+          <block wx:for="{{goods.info2_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+            <view class="outline-item">
+              <view class="course-title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="course-time">
+                <image src="../../images/time.png" mode="widthFix"></image>
+                <text>开课时间:{{item.start_time}} - 时长: {{item.lenth}}分</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <view class="teachers-box">
+          <block wx:for="{{goods.info3_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+            <view class="teacher-item">
+              <view class="teacher-pic">
+                <image src="{{item.avater_url}}" mode="widthFix"></image>
+              </view>
+              <view class="teacher-detail">
+                <view class="teacher-name">{{item.name}}</view>
+                <view class="teacher-intr">{{item.content}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <block wx:if="{{isBuy === false}}">
+    <view class="buy-box">
+      <view class="buy-info">
+        <view class="buy-price">￥
+          <text>{{goods.price}}</text>
+        </view>
+        <view class="buy-text">
+          <view class="buy-time">距离停售
+            <text>{{goods.diff}}天</text>
+          </view>
+          <view class="buy-seat">仅售
+            <text>{{goods.stock}}</text>席，还剩
+            <text>{{goods.reward_stock}}</text>位</view>
+        </view>
+      </view>
+      <view class="buy-now" bindtap="onBuyOrder">
+        <text>购买</text>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="buy-box">
+      <view class="buy-info">
+        <view class="buy-price">￥
+          <text>{{goods.price}}</text>
+        </view>
+        <view class="buy-text">
+          <view class="buy-time">距离停售
+            <text>{{goods.diff}}天</text>
+          </view>
+          <view class="buy-seat">仅售
+            <text>{{goods.stock}}</text>席，还剩
+            <text>{{goods.reward_stock}}</text>位</view>
+        </view>
+      </view>
+      <view class="buy-now" bindtap="onBuyOrder">
+        <text>已购买</text>
+      </view>
+    </view>
+  </block>
+</block>
+<block wx:if="{{goods.goods_type == 1}}">
+  <swiper style="height:{{swiperHeight-170}}px;" current="{{currentTab}}" bindchange="swiperchange">
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <block wx:for="{{goods.info1_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+          <image src="{{item}}" mode="widthFix" style="width:100%"></image>
+        </block>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <view class="course-outline">
+          <block wx:for="{{goods.info2_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+            <view class="outline-item">
+              <view class="course-title">
+                <text>{{item.title}}</text>
+              </view>
+              <view class="course-time">
+                <image src="../../images/time.png" mode="widthFix"></image>
+                <text>时间:{{item.start_time}} - 时长: {{item.lenth}}分</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view class="swiper-cont" style="height:{{swiperHeight-170}}px;">
+        <view class="teachers-box">
+          <block wx:for="{{goods.info3_info}}" wx:for-item="item" wx:key="key" wx:for-index="itemindex">
+            <view class="teacher-item">
+              <view class="teacher-pic">
+                <image src="{{item.avater_url}}" mode="widthFix"></image>
+              </view>
+              <view class="teacher-detail">
+                <view class="teacher-name">{{item.name}}</view>
+                <view class="teacher-intr">{{item.content}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <view class="buy-box">
+    <button class="buy-service" style="width:100%;" open-type="contact" bindcontact="handleContact">
+      联系客服咨询
+    </button>
+  </view>
+</block>

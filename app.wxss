@@ -1,0 +1,118 @@
+/**app.wxss**/
+@import './components/navigationBar/navigationBar.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  color: #333;
+}
+
+/******  颜色管理  ******/
+
+/* 答题界面 */
+/*  字体  */
+.test-at-color {
+  /* color: #4f83f4; */
+  color: #70da96;
+}
+
+/* 选项颜色 */
+.choice-box-color {
+  border-color: #70da96;
+  color: #70da96;
+}
+
+.choice-box-at-color {
+  background: #70da96;
+  color: #fff;
+}
+
+/* 答题尾页按钮 */
+.complete-btn-color {
+  color: #fff;
+  background: #70da96;
+}
+
+/* 侧滑答题卡 */
+.answer-item-color {
+  color: #70da96;
+  border-color: #70da96;
+  background: #fff;
+}
+
+.answer-item-at-color {
+  background: #70da96;
+  color: #fff;
+}
+
+.answer-btn-color {
+  background: #70da96;
+  color: #fff;
+}
+
+/* 休息界面 */
+.go-on-color {
+  border-color: #70da96;
+  color: #70da96;
+}
+
+/* 答题结果 */
+.result-chart-color {
+  border-top-color: #eee;
+  border-bottom-color: #eee;
+  /* border-left-color: #5987eb; */
+  border-left-color: #029132;
+  border-right-color: #eee;
+}
+
+.result-btn-color {
+  background: #70da96;
+  color: #fff;
+}
+
+/* 答题解析界面 */
+/* 选项颜色 */
+.analysis-choice-box-at-color1 {
+  background: #70da96;
+  color: #fff;
+}
+
+/* 首页 */
+/*切换科目选项*/
+.select-category-color {
+  /* background: #4b73ca; */
+  background: #029132;
+}
+
+/* 学习进度 */
+.study-percent-color {
+  border-top-color: #f2f2f2;
+  border-bottom-color: #ffffff;
+  /* border-left-color: #5987eb; */
+  border-left-color: #029132;
+  border-right-color: #f2f2f2;
+}
+
+/* 错题练习 */
+.num-value-color {
+  /* color: #5987eb; */
+  color: #029132;
+}
+
+/* 练习历史 */
+.history-info-color {
+  background: #80a3f0;
+}
+
+/*商品详情*/
+.tabs-item-at-color {
+  border-bottom: 5rpx solid #70da96;
+  color: #70da96;
+  /* color: #5987eb; */
+}

@@ -1,0 +1,396 @@
+.swiper-item{
+  position: relative;
+}
+
+.paper-bar{
+  position: fixed;
+  box-sizing: border-box;
+  width:100%;
+  height:50px;
+  border-top:1px solid #eee;
+  bottom:0;
+  background: #fff;
+}
+
+.paper-bar{
+  display: flex;
+  padding:0 60rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paper-fav image{
+  display: block;
+  width:50rpx;
+  height:50rpx;
+}
+
+.paper-card image{
+  display: block;
+  width:50rpx;
+  height:50rpx; 
+}
+
+.paper-share image{
+  display: block;
+  width:50rpx;
+  height:50rpx; 
+}
+
+.paper-timer{
+  box-sizing: border-box;
+  height:40rpx;
+  font-size: 26rpx;
+  line-height:30rpx;
+  color:#999;
+  border-top:5rpx solid #d9d9d9;
+  border-bottom:5rpx solid #d9d9d9;
+}
+
+.topic-info{
+  box-sizing: border-box;
+  display: flex;
+  padding:0 40rpx;
+  justify-content: space-between;
+  align-items: center;
+  height:46px;
+  font-size: 34rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.topic-type{
+  color:#666;
+}
+
+.topic-num{
+  color:#999;
+}
+
+.test-at{
+  font-size: 40rpx;
+}
+
+/* 试题拖拽面板 */
+.material-cont{
+  overflow: auto;
+  box-sizing: border-box;
+  width:100%;
+  padding:0 30rpx;
+  background: #f2f2f2;
+}
+
+.material-tit{
+  font-size: 30rpx;
+  color:#999;
+  line-height:46rpx;
+}
+
+.material-text{
+  font-size: 34rpx;
+  color:#666;
+}
+
+.test-card{
+  background: #fff;
+}
+
+.card-handle{
+  width:100%;
+  height:28px;
+  background:#f2f2f2;
+}
+
+.card-handle image{
+  width:100%;
+}
+
+.topic-box{
+  overflow: auto;
+}
+
+.topic-cont{
+  width:100%;
+  box-sizing: border-box;
+  padding:40rpx;
+  font-size: 34rpx;
+  color:#333;
+}
+
+.answer-area{
+  padding-bottom:100rpx;
+}
+
+.item-choice{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width:100%;
+  box-sizing: border-box;
+  font-size: 34rpx;
+  color:#333;
+  margin-top:20rpx;
+  padding:0 40rpx;
+}
+
+.item-choice-hover{
+  background:#f2f2f2;
+}
+
+.choice-box{
+  width:68rpx;
+  height:68rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:18rpx 0;
+  box-sizing: border-box;
+  border-width: 3rpx;
+  border-style: solid;
+  position: relative;
+}
+
+.radio .choice-box{
+  border-radius: 34rpx;
+}
+
+.poly .choice-box{
+  border-top-left-radius:30rpx; 
+  border-bottom-right-radius:30rpx; 
+}
+
+.item-cont{
+  width:560rpx;
+  margin:24rpx 0 24rpx 24rpx;
+  line-height:56rpx;
+  color:#666;
+}
+
+/*暂停*/
+
+.keep-tip{
+  position: fixed;
+  top: 0;
+  width:100%;
+  height:100%;
+}
+
+.tip-bg{
+  background: #000;
+  opacity:.5;
+  width:100%;
+  height:100%;
+}
+
+.tip-box{
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+}
+
+.tip-wrap{
+  width:420rpx;
+  height:440rpx;
+  margin:40% auto;
+  background:#fff;
+  border-radius: 20rpx;
+  padding:40rpx 20rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tip-img{
+  width:300rpx;
+}
+
+.tip-title{
+  line-height:100rpx;
+  font-size: 34rpx;
+}
+
+.go-on{
+  width:260rpx;
+  height:80rpx;
+  margin-top:30rpx;
+  line-height:80rpx;
+  border-width: 3rpx;
+  border-style: solid;
+  border-radius: 20rpx;
+  text-align: center;
+
+}
+
+/*侧滑面板*/
+.topic-card{
+  position: fixed;
+  top: 0;
+  width:100%;
+  height:100%;
+  background:#fff;
+}
+
+.answer-card-title{
+  padding:40rpx;
+  font-size: 34rpx;
+  color:#999;
+}
+
+.answer-card-ctl{
+  position: absolute;
+  box-sizing: border-box;
+  width:100%;
+  height:50px;
+  border-top:1px solid #eee;
+  bottom:0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 40rpx;
+}
+
+.answer-btn{
+  width:300rpx;
+  height:80rpx;
+  line-height:80rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.answer-card-cont{
+  width:100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.answer-items{
+  width: 740rpx;
+  max-height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.answer-item{
+  width:68rpx;
+  height:68rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:30rpx 40rpx;
+  box-sizing: border-box;
+  border-style: solid;
+  border-width: 3rpx;
+  border-radius: 20rpx;
+}
+
+/*完成面板*/
+.topic-complete{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+}
+
+.complete-tip{
+  width:480rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.complete-tip image{
+  width:300rpx;
+  height:285rpx;
+}
+
+.topic-complete-ctl{
+  width: 100%；
+}
+
+.topic-complete-ctl{
+  box-sizing: border-box;
+  width:100%;
+  height:50px;
+  bottom:0;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 80rpx;
+  margin-top:80rpx;
+}
+
+.complete-btn{
+  width:260rpx;
+  height:80rpx;
+  line-height:80rpx;
+  border-radius: 20rpx;
+  text-align: center;
+}
+
+.body{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  /* 使用flex布局 */
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* 顶部显示结果 */
+.end{
+  width: 100%;
+  height: 25%;/* 动态设置 */
+  /* background-color: red;  */
+  position: relative;
+}
+.end text{
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  font-size: 60px;
+  color: white;
+}
+/* 底部的按钮 */
+.bottom{
+  width: 100%;
+  height: 450px;/* 5×90px */
+  background-color: green;
+}
+/* 按钮的整体样式 设置高度为90px */
+.bottom .item{
+  display: inline-block;
+  width: 25%;
+  height: 90px;
+  background-color: #666666;
+  /* 字体设置 */
+  color: white;
+  text-align: center;
+  line-height: 90px;
+  font-size: 20px;
+  /* 边框设置 */
+  border: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+.bottom .gray{
+  background-color: gray;
+  color: black;
+}
+.bottom .orange{
+  background-color: orange;
+  color: white;
+}
+/* 单独占两个位置 */
+.bottom .twoItem{
+  width: 50%;
+}
